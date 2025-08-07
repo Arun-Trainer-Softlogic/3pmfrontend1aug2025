@@ -1,0 +1,1 @@
+echo pip setuptools wheel virtualenv pipenv black flake8 mypy isort pre-commit pytest coverage tox requests httpx flask fastapi django numpy pandas matplotlib seaborn scikit-learn jupyter notebook python-dotenv loguru rich click typer > requirements.txt
