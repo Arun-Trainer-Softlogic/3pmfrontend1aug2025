@@ -1,73 +1,97 @@
+<!-- html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>table and form</title>
 </head>
 <body>
-
-<!-- 
-semantic elements  -->
-
-
-<header>
-    <h1>video</h1>
-    <nav>
-        <ul>
-            <a href=""><li>home</li></a>
-            <a href=""><li>about</li></a>
-            <a href=""><li>contact</li></a>
-            <a href=""><li>login</li></a>
-            <a href=""><li>signup</li></a>
-        </ul>
-    </nav>
-</header>
-
-<main>
-    <article >
-        <h1>Lorem ipsum dolor sit.</h1>
-        <p>This is a sample article about video content. It discusses various aspects of video production, editing, and distribution.</p
+    <!-- table -->
+    <table border="1"  cellpadding="5" cellspacing="0">
+<tr>
+    <th rowspan="2">Path</th>
+    <th>Method</th>
+    <th colspan="2">Description</th>
+</tr>
+<tr>
+    <td>five.html</td>
+    <td>GET</td>
+    <td>This page is used to display the fifth item in a series of items.</td>
+</tr>
+</table><br><br>
+<!-- form -->
+<form action="https://formspree.io/f/xwpqwvaq" method="POST">
+<label for="inputField">name:</label>
+<input type="text" name="inputField" id="in1" placeholder="enter your name">
+<label for="inputField2">email:</label>
+<input type="email" name="inputField2" id="in2">
+<label for="inputField3">password:</label>
+<input type="password" name="inputField3" id="in3">
+<button type="submit">submit</button>
+<label for="cars">cars</label>
+<select name="cars" id="in4">
+<optgroup label="vj's cars">
+<option value="bmw">bmw</option>
+<option value="audi">audi</option>
+<option value="benz">benz</option>
+</optgroup>
+<optgroup label="karupan cars">
+    <option value="volvo">volvo</option>
+    <option value="toyoto">toyoto</option>
+    <option value="suzuki">suzuki</option>
+</optgroup>
+</select><br><br>
+<label for="checkbox1">chennai</label>
+<input type="checkbox" name="checkbox1" id="in5">
+<label for="checkbox2">coimbatore</label>
+<input type="checkbox" name="checkbox2" id="in6">   
+<label for="checkbox3">theni</label>
+<input type="checkbox" name="checkbox3" id="in7"><br><br>
+<fieldset>
+    <legend>heyy dudee</legend>
+    <label for="radio1">one</label>
+    <input type="radio" name="radio1" id="in8" value="one">
+    <label for="radio2">two</label>
+    <input type="radio" name="radio1" id="in9" value="two">
+    <label for="radio3">three</label>
+    <input type="radio" name="radio1" id="in10" value="three">
+    <label for="radio4">others</label>
+    <input type="radio" name="radio1" id="in11" value="others">
+</fieldset>
+<input type="date" name="date" id="in12" required>
+<input type="datetime-local" name="datetime" id="in13" required>
+<input type="number" name="number" id="in14" min="1" max="100" step="2">
+</form>    
+<!-- iframe -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Rj5YkVwxuw0?si=K1Z-xsdGwiIrUqoj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.chennaiproperties.in/blog/dac-developers"  width="100%" height="100%"></iframe>
+<!-- video -->
+<video controls>
+<source src="../Thangalaan VFX Secrets ｜ Full Breakdown & Behind-the-Scenes Footage.mp4" type="video/mp4"></video>
+<!-- audio -->
+<audio controls>
+    <source src="../Monica - Coolie - MassTamilan.mp3" type="audio/mpeg">
+</audio>
+<!-- semantic elements  is used to decide the layout for entire web page-->
+<header></header>
+<nav></nav>
+<section>
+    <article>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores, consequuntur.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
     </article>
-
-
-    <section>
-        <article></article>
-        <article><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti rem, enim debitis adipisci sequi dolor eaque quam sit! Quod laudantium facere, est amet quis alias quidem ab fugiat rem. Quas maxime hic eveniet provident nesciunt rem, id voluptatum quisquam deserunt voluptate odit porro distinctio ipsam molestiae vel ad, aperiam at dignissimos cum debitis? Ducimus, ad nam.</p></article>
-    </section>
-
-
-
-    <aside>
-        nasdf
-        
-    </aside>
-
+</section><aside></aside>
+<main>
+<article>
+    <h1>Welcome to the Page</h1>
+    <p>This is a sample article to demonstrate the use of semantic HTML elements.</p>
+    <p>Feel free to explore the features and functionalities provided in this example.</p>
+</article>
 </main>
-
-
-
-
 <footer>
-    <p>Copyright © 2025</p>
+    <p>© 2023 Your Company Name. All rights reserved.</p>
 </footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
 </html>
