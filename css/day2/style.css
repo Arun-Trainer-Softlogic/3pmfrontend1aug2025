@@ -1,0 +1,75 @@
+/* h1{
+    color: greenyellow;
+}
+
+
+.ar {
+    color: red;
+}
+
+
+
+#rr{
+    color: blue;
+}
+
+
+
+
+[type="text"] {
+    color: purple;
+}
+
+
+[title ~= "flower" ]{
+    color: orange;
+}
+ */
+
+
+ /* *{
+    color: rgb(0, 255, 0);
+ } */
+
+/* 
+pseudo selectors  */
+
+
+
+ h1:hover{
+    color: rgb(255, 0, 0);
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+ }
+
+
+
+ input:focus{
+    outline: 2px solid rgb(0, 255, 0);
+ }
+
+
+
+
+p:nth-child(even){
+    color: aqua;
+ }
+
+
+ 
+
+
+ p:last-child{
+    color: rgb(0, 0, 255);
+   font-weight: bold;
+   text-transform: uppercase;
+ }
+
+
+
+
+h1, p {
+    background-color: pink;
+}
+
+
+
