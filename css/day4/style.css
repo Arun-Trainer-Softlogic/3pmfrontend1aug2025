@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+
+.static {
+/* background-color: red; */
+padding: 50px;
+height: 300px;
+width: 50px;
+border: 3px solid green;
+background-color: lightblue;
+
+position: static;
+}
+
+
+
+.Relative{
+    background-color: antiquewhite;
+    position: relative;
+    top: 40px;
+    left: 0px;
+}
+
+
+
+.parent {
+    background-color: tomato;
+    position: relative;
+    padding: 50px;
+    height: 300px;
+    width: 50px;
+    border: 3px solid green;
+    margin-left: 400px;
+}
+
+.child{
+    background-color: lightgreen;
+    position: absolute;
+    padding: 40px;
+    top: 200px;
+    left: 50px;
+}
+
+
+
+
+.container{
+    background-color: bisque;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+
+
+
+.sticky{
+    background-color: lightpink;
+    position: sticky;
+    bottom: 0;
+}
+
