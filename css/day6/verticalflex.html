@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vertical Flexbox</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+
+    .flex-vertical {
+      display: flex;
+      flex-direction: row;   /* stack items vertically */
+      border: 2px solid black;
+      height: 300px;            /* to show vertical spacing */
+    }
+    .item {
+      background: steelblue;
+      color: white;
+      padding: 20px;
+      margin: 5px;
+      text-align: center;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Vertical Flexbox (flex-direction: column)</h2>
+
+  <h3>justify-content: space-between (vertical spacing)</h3>
+  <div class="flex-vertical" style="justify-content: space-between;">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h3>align-items: center (horizontal centering)</h3>
+  <div class="flex-vertical" style="align-items: center;">
+    <div class="item" style="width:100px;">Box A</div>
+    <div class="item" style="width:150px;">Box B</div>
+    <div class="item" style="width:80px;">Box C</div>
+  </div>
+
+</body>
+</html>

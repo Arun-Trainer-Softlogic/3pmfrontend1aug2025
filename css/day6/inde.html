@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .flex-item{
+            background-color: salmon;
+            padding: 20px;
+            margin: 5px;
+            text-align: center;
+            border-radius: 18px;
+        }
+
+        
+        .flex-container{
+            display: flex;
+            border: 3px solid black;
+            padding: 10px;
+            margin-bottom: 20px;
+            height: 150px;
+          
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Flexbox layouts </h1>
+
+<div class="flex-container">
+    <div class="flex-item">Item 1</div>
+    <div class="flex-item">Item 2</div>
+    <div class="flex-item">Item 3</div>
+
+</div>
+
+
+
+<h1>Justify content </h1>
+<p><strong>justify-content: space between</strong></p>
+
+<div class="flex-container" style="justify-content: space-between;" >
+    <div class="flex-item">Item 1</div>
+    <div class="flex-item">Item 2</div>
+    <div class="flex-item">Item 3</div>
+</div>
+
+<p><strong>justify-content : center</strong></p>
+
+<div class="flex-container" style=" justify-content: space-between; justify-content: center;" >
+    <div class="flex-item">Item 1</div>
+    <div class="flex-item">Item 2</div>
+    <div class="flex-item">Item 3</div>
+</div>
+<h2>Align self</h2>
+
+
+<div class="flex-container"  style="align-items: flex-start;" >
+    <div class="flex-item" >Normal</div>
+    <div class="flex-item"  style=" align-self: flex-end;" >Align -self end </div>
+    <div class="flex-item" >Item 3</div>
+</div>
+
+
+
+<!-- 
+Flex container and flex items
+
+justify-content (horizontal alignment)
+
+align-items (vertical alignment)
+
+align-self (per-item alignment override)
+
+Real-world uses: navigation bar and responsive card layout
+ -->
+
+
+</body>
+</html>

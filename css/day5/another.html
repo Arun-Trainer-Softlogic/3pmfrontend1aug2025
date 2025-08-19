@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .float-box {
+            width: 100px;
+            height: 100px;
+            float: right;
+            margin-right: 10px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    </style>
+
+</head>
+<body>
+    <h2>floats example </h2>
+
+
+    <img src="./5w.webp" alt="image " style="width: 100px; float: left; "  >
+
+    <p>This paragraph text wraps around the floated image. Floats are commonly
+    used for images inside articles or for creating layouts before Flexbox and Grid.</p>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+
+    <div  style="border: 2px solid black; margin-bottom: 10px;"> 
+        <div class="float-box">Box A</div>
+        <div class="float-box">Box B</div>
+
+    </div>
+    <p><em>Notice: the black border does not expand because the children are floated.</em></p>
+
+
+
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+
+
+      <h3>Float Fixed with Clearfix</h3>
+  <div class="clearfix" style="border:2px solid black; margin-bottom:10px;">
+    <div class="float-box">Box A</div>
+    <div class="float-box">Box B</div>
+
+
+
+
+
+
+  </div>
+</body>
+</html>
+
