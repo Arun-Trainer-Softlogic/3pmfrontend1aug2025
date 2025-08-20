@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grid Layout Examples</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    h2 { margin-top: 40px; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+
+    .grid-container {
+      display: grid;
+      border: 2px solid black;
+      gap: 10px;
+      margin-bottom: 20px;
+      padding: 10px;
+    }
+    .grid-item {
+      background: seagreen;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    /* Grid Template Areas Example */
+    .layout {
+      display: grid;
+      grid-template-areas:
+        "header header header"
+        "sidebar content content"
+        "footer footer footer";
+      grid-template-columns: 1fr 2fr 2fr;
+      grid-template-rows: 80px 200px 60px;
+      gap: 10px;
+      border: 2px solid black;
+      margin-top: 20px;
+    }
+    
+    .header  { grid-area: header; background: steelblue; }
+    .sidebar { grid-area: sidebar; background: tomato; }
+    .content { grid-area: content; background: goldenrod; }
+    .footer  { grid-area: footer; background: slateblue; }
+  </style>
+</head>
+<body>
+
+  <h1>7.4 Grid Layout</h1>
+
+  <!-- 7.4.1 Grid Container and Grid Items -->
+  <h2>7.4.1 Grid Container and Grid Items</h2>
+  <div class="grid-container" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="grid-item">1</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>
+    <div class="grid-item">4</div>
+    <div class="grid-item">5</div>
+    <div class="grid-item">6</div>
+  </div>
+
+  <!-- 7.4.2 Defining Rows and Columns -->
+  <h2>7.4.2 Defining Rows and Columns</h2>
+  <div class="grid-container" style="grid-template-columns: 1fr 2fr 1fr; grid-template-rows: 100px 150px;">
+    <div class="grid-item">A</div>
+    <div class="grid-item">B</div>
+    <div class="grid-item">C</div>
+    <div class="grid-item">D</div>
+    <div class="grid-item">E</div>
+    <div class="grid-item">F</div>
+  </div>
+
+  <!-- 7.4.3 Grid Template Areas -->
+  <h2>7.4.3 Grid Template Areas</h2>
+  <div class="layout">
+    <div class="grid-item header">Header</div>
+    <div class="grid-item sidebar">Sidebar</div>
+    <div class="grid-item content">Content</div>
+    <div class="grid-item footer">Footer</div>
+  </div>
+
+</body>
+</html>
