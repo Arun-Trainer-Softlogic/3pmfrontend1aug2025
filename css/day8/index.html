@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .grid-container {
+        display: grid;
+        border: 2px solid green;
+        gap: 10px;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+
+      .grid-item {
+        background-color: seagreen;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-areas:
+          "header header header"
+          "sidebar content content"
+          "footer footer footer ";
+
+        grid-template-columns: 1fr 2fr 2fr;
+        grid-template-rows: 80px 200px 60px;
+        gap: 10px;
+        border: 5px solid purple;
+        margin-top: 20px;
+      }
+      .header {
+        grid-area: header;
+        background: steelblue;
+      }
+
+      .sidebar {
+        grid-area: sidebar;
+        background: tomato;
+      }
+
+      .content {
+        grid-area: content;
+        background: goldenrod;
+      }
+
+      .footer {
+        grid-area: footer;
+        background: steelblue;
+      }
+      li{
+        display: inline;
+        padding: 20px; 
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Grid Layout</h1>
+
+    <div class="grid-container" style="grid-template-columns: 100px 200px 15px">
+      <div class="grid-item">1</div>
+      <div class="grid-item">2</div>
+      <div class="grid-item">3</div>
+      <div class="grid-item">4</div>
+      <div class="grid-item">5</div>
+      <div class="grid-item">6</div>
+    </div>
+
+    <h2>defining Rows and Coloums</h2>
+
+    <div
+      class="grid-container"
+      style="
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 100px 150px;
+      "
+    >
+      <div class="grid-item">A</div>
+      <div class="grid-item">B</div>
+      <div class="grid-item">C</div>
+      <div class="grid-item">D</div>
+      <div class="grid-item">E</div>
+      <div class="grid-item">F</div>
+    </div>
+
+    <div class="layout">
+      <div class="grid-item header">
+        <div>
+          <nav>
+            <ul>
+              <button><li><a href="">Home</a></li></button>
+              
+              <li>About</li>
+              <li>Contact</li>
+              <li>Arun</li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="grid-item sidebar">Sidebar</div>
+      <div class="grid-item content">Content</div>
+      <div class="grid-item footer">Footer</div>
+    </div>
+  </body>
+</html>
