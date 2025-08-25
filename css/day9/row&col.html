@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    .container{
+        display: flex;
+        gap: 20px;
+        padding: 40px;
+        text-align: center;
+        background-color: yellowgreen;
+        
+    }
+
+    .box{
+        flex: 1;
+        background-color: aqua;
+        padding: 40px;
+        font-size: 20px;
+        border-radius: 20px;
+
+
+    }
+
+
+    @media (max-width:600px){
+        .container{
+            flex-direction: column;
+            /* flex-wrap: wrap; */
+        }
+
+
+        
+    }
+</style>
+
+
+</head>
+<body>
+    <h1 style="text-align: center;">Responsive Layout </h1>
+    <div class="container">
+        <div class="box">BOX 1</div>
+        <div class="box">BOX 2</div>
+        <div class="box">BOX 3</div>
+        <div class="box">BOX 4</div>
+    </div>
+
+
+
+    <p style="text-align: center;">Resize the layout change </p>
+</body>
+</html>
