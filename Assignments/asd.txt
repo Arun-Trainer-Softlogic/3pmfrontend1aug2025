@@ -1,0 +1,7 @@
+flex: 1 1 30% is shorthand for:
+
+flex-grow: 1 → the box can grow to take extra space.
+
+flex-shrink: 1 → the box can shrink if needed.
+
+flex-basis: 30% → the initial width of the box is 30% of the parent container.
