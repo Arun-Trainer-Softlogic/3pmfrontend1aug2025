@@ -1,67 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<style>
+.box {
+  width: 150px; height: 150px;
+  background: lightblue;
+  border: 2px solid black;
+  transition: border-width 0.5s;
+}
+.box:hover {
+  border-width: 15px;
+}
+</style>
 </head>
 <body>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus debitis ad iure ut porro corporis eligendi repellendus veniam beatae maxime, id quam possimus. Laudantium porro odio modi accusantium facilis! Magni.
-    Here’s a simple example of an HTML form that collects user input:
-
-Copy code
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample Form</title>
-</head>
-<body>
-    <h2>Contact Us</h2>
-    <form action="/submit-form" method="post">
-        <!-- Text Input -->
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name" required>
-        <br><br>
-
-        <!-- Email Input -->
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        <br><br>
-
-        <!-- Password Input -->
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br><br>
-
-        <!-- Radio Buttons -->
-        <label>Gender:</label>
-        <input type="radio" id="male" name="gender" value="male">
-        <label for="male">Male</label>
-        <input type="radio" id="female" name="gender" value="female">
-        <label for="female">Female</label>
-        <br><br>
-
-        <!-- Checkbox -->
-        <label>
-            <input type="checkbox" name="subscribe" value="yes">
-            Subscribe to newsletter
-        </label>
-        <br><br>
-
-        <!-- Submit Button -->
-        <button type="submit">Submit</button>
-    </form>
-</body>
-</html>
-
-Key Points:
-<form>: Defines the form and its attributes like action (where to send data) and method (GET or POST).
-Input Types: Includes text, email, password, radio, and checkbox.
-Labels: Improve accessibility by associating text with input fields.
-required: Ensures the user fills out the field before submission.
-
-Feel free to customize it as per your needs! 😊
+<div class="box"></div>
 </body>
 </html>
