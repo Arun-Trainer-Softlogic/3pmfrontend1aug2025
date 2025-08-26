@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CSS 3D Cube</title>
+<style>
+  :root { --size: 160px; --half: calc(var(--size) / 2); }
+
+  body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0f172a;color:#e2e8f0;font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif}
+
+  .scene{
+    width: 400px; height: 400px;
+    perspective: 800px;           /* depth */
+    perspective-origin: 50% 40%;
+  }
+
+  .cube{
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    transform-style: preserve-3d;
+    animation: spin 8s linear infinite;
+    margin:auto;
+  }
+  .scene:hover .cube{ animation-play-state: paused; }
+
+  .face{
+    position:absolute; inset:0;
+    display:grid; place-items:center;
+    font: 700 20px/1 system-ui,Segoe UI,Roboto,Arial,sans-serif;
+    color:#0f172a;
+    backface-visibility: hidden;
+    border:1px solid rgba(0,0,0,.2);
+    box-shadow: inset 0 0 40px rgba(0,0,0,.12);
+  }
+
+  /* Faces */
+  .front  { background:#93c5fd; transform: translateZ(var(--half)); }
+  .back   { background:#60a5fa; transform: rotateY(180deg) translateZ(var(--half)); }
+  .right  { background:#a7f3d0; transform: rotateY(90deg)  translateZ(var(--half)); }
+  .left   { background:#34d399; transform: rotateY(-90deg) translateZ(var(--half)); }
+  .top    { background:#facc15; transform: rotateX( 90deg) translateZ(var(--half)); }
+  .bottom { background:#fbbf24; transform: rotateX(-90deg) translateZ(var(--half)); }
+
+  /* Subtle tilt so cube sits nicely in space */
+  .cube{ transform: rotateX(-18deg) rotateY(24deg) rotateZ(0deg); }
+  /* Continuous spin layered on top using a wrapper */
+  .spinner{ display:inline-block; animation: orbit 12s linear infinite; }
+  .scene:hover .spinner{ animation-play-state: paused; }
+
+  @keyframes orbit{
+    0%   { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+  }
+  @keyframes spin{
+    0%   { transform: rotateX(-18deg) rotateY(24deg); }
+    100% { transform: rotateX(-18deg) rotateY(384deg); }
+  }
+
+  /* Optional ground reflection */
+  .ground{
+    position:absolute; inset:auto 0 40px 0; height: 12px;
+    filter: blur(10px); background: radial-gradient(ellipse at center, rgba(0,0,0,.45), transparent 60%);
+    transform: translateZ(-200px);
+  }
+
+  .hint{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);opacity:.8;font-size:14px}
+</style>
+</head>
+<body>
+  <div class="scene">
+    <div class="spinner">
+      <div class="cube">
+        <div class="face front">FRONT</div>
+        <div class="face back">BACK</div>
+        <div class="face right">RIGHT</div>
+        <div class="face left">LEFT</div>
+        <div class="face top">TOP</div>
+        <div class="face bottom">BOTTOM</div>
+      </div>
+    </div>
+    <div class="ground"></div>
+  </div>
+  <div class="hint">Hover to pause • Edit <code>--size</code> to resize</div>
+</body>
+</html>
