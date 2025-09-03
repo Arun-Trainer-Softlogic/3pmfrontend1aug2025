@@ -150,15 +150,7 @@ console.log(apple(10,20))
 
 // let ht = new Date;
 // console.log(  typeof ht);
-// let c = 15;
-// let new_c = BigInt(c);
-// let b = 6959575748394958658n;
-// function addition(new_c, )
 
-// function
-// console.log(d + e);
-// console.log(b);
-// function addition(a, )
 
 
 
