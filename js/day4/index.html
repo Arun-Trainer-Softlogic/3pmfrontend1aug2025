@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <h2>Enter a day of the Week</h2>
+
+    <form id="dayForm">
+      <input type="text" id="dayInput" placeholder="e.g monday" />
+      <button type="submit">Check</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+      document
+        document.getElementById("dayForm").addEventListener("submit", function(event) {
+
+          event.preventDefault();
+
+          let day = document.getElementById("dayInput").value.toLowerCase();
+          let result = "";
+
+          switch (day) {
+            case"monday":
+              result= "Monday"
+              break;
+            case"tuesday":
+              result = "tuesday";
+              break;
+            default:
+              result= "Invalid day";
+          }
+
+          document.getElementById("result").innerHTML = result;
+        });
+    </script>
+  </body>
 </html>
