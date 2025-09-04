@@ -60,16 +60,12 @@
 // console.log(a < b);
 // console.log(a >= b);
 // console.log(a <= b);
+// let a = 5;
+// let b = 10; 
 
-let a = 5;
-let b = 10; 
-
-
-console.log(a > 3 || b> 5);// or
-console.log( a > 6 && b > 5); // and
-// console.log(a && 0 );
-
-
+// console.log(a > 3 || b> 5);// or
+// console.log( a > 6 && b > 5); // and
+// // console.log(a && 0 );
 
 
 
