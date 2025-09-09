@@ -123,5 +123,21 @@ const people = [
 
 
 
+// const ar =  function (){
+//   console.log("i Am the IIFE");
+// } 
+// console.log(ar());
 
 
+// IIFE  with varaibales 
+
+
+// (function () {
+//   let message = "Hello from IIFE "
+//   console.log(message);
+  
+// })();
+
+// (() => {
+//   console.log("Arrow function IIFE running!");
+// })();
