@@ -37,3 +37,49 @@
 
 
 
+// function sla (name){
+//     //code block 
+//     console.log("Hello" + name);
+    
+// }
+
+// sla("thiyagu");
+
+
+// function add(a , b){
+//     return a + b;
+// }
+
+// let result = add(10, 20)
+
+// console.log(result);
+
+
+
+
+// const multiply = function(x , y){
+//     return x * y ;
+// }
+// console.log(multiply(4, 5));
+
+// const divide = (a , b) => {
+//     return a / b;
+// };
+
+
+
+// function greet(name) {
+//      console.log("Hello " + name);
+   
+// }
+
+// const greet  = (name) => {
+//     console.log("Hello " + name);
+// };
+
+
+function greetUser (name = "Guest") {
+    console.log("Hello " + name);
+}
+
+greetUser("thiyagu");
