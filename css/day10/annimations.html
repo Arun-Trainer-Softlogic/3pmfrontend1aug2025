@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 150px;
+        height: 150px;
+        background-color: red;
+        animation: changeColor 0.5s infinite alternate;
+      }
+
+      @keyframes changeColor {
+        from {
+          background: red;
+        }
+        to {
+          background: blue;
+        }
+      }
+
+      .boxes {
+        width: 100px;
+        height: 100px;
+        background: green;
+        animation: move 2s infinite alternate;
+      }
+      @keyframes move {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(200px);
+        }
+      }
+
+      .rotate {
+        width: 100px;
+        height: 100px;
+        background: orchid;
+        animation: spin 2s linear infinite;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(1000deg);
+        }
+      }
+
+      .scale {
+        width: 100px;
+        height: 100px;
+        background: purple;
+        animation: zoom 2s infinite alternate;
+        margin-left: 200px;
+      }
+
+      @keyframes zoom {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(1.5);
+        }
+      }
+      .bounce {
+        width: 100px;
+        height: 100px;
+        background: teal;
+        animation: bounce 1s infinite;
+        position: relative;
+      }
+
+
+      @keyframes bounce {
+        0%, 100%{top: 4px;}
+        50% {top: 50px;}        
+      }
+      .fade{
+        width: 100px;
+        height: 100px;
+        background: rgb(0, 125, 125);
+        animation: fade 2s infinite alternate;
+      }
+      @keyframes fade {
+        from{opacity: 0;}
+        to{opacity: 1;}
+        
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+
+    <div class="boxes"></div>
+
+    <div class="rotate"></div>
+
+    <div class="scale"></div>
+
+    <div class="bounce"></div>
+
+
+    <div class="fade"></div>
+ 
+  </body>
+</html>

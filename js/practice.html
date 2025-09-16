@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1 id="heading" class="heading">Hello JS DOM </h1> -->
+
+    <div id="todo-container">
+         <h1>Todo List </h1>
+         <input type="text" id="todo-input" placeholder="Enter your task here">
+         <button onclick="addTodo()">Add It</button>
+         <ul id="todo-list"></ul>
+
+    </div>
+
+<script>
+    function addTodo(){
+        // console.log("buton clicked ");
+
+        let input = document.getElementById("todo-input")
+        let task = input.value.trim();
+
+
+        if (task === ""){
+            alert ("please enter a task")
+            return
+        }
+        let li = document.createElement("li")
+        li.textContent = task;
+
+        document.getElementById("todo-list").appendChild(li)
+
+
+        
+    }
+</script>
+
+
+
+
+    <script src="./practice .js"></script>
+</body>
+</html>
