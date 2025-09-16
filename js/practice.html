@@ -23,6 +23,7 @@
         let input = document.getElementById("todo-input")
         let task = input.value.trim();
 
+
         if (task === ""){
             alert ("please enter a task")
             return
@@ -31,6 +32,9 @@
         li.textContent = task;
 
         document.getElementById("todo-list").appendChild(li)
+
+
+        
     }
 </script>
 

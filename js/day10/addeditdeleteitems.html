@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Editable Todo List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: #f4f4f4;
+      margin: 5px auto;
+      padding: 8px;
+      width: 300px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 5px;
+    }
+    button {
+      cursor: pointer;
+      border: none;
+      margin-left: 5px;
+      padding: 5px 8px;
+      border-radius: 3px;
+    }
+    .delete-btn {
+      background: red;
+      color: white;
+    }
+    .edit-btn {
+      background: blue;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h2>Editable Todo List</h2>
+  <input type="text" id="todoInput" placeholder="Enter task">
+  <button id="addBtn">Add Task</button>
+  <ul id="list"></ul>
+
+  <script>
+    let list = document.getElementById("list");
+    let addBtn = document.getElementById("addBtn");
+    let input = document.getElementById("todoInput");
+
+    // Add Item
+    addBtn.addEventListener("click", function() {
+      let task = input.value.trim();
+      if (task === "") {
+        alert("Please enter a task!");
+        return;
+      }
+
+      let li = document.createElement("li");
+
+      // Task text
+      let span = document.createElement("span");
+      span.textContent = task;
+
+      // Edit button
+      let editBtn = document.createElement("button");
+      editBtn.textContent = "Edit";
+      editBtn.classList.add("edit-btn");
+
+      editBtn.addEventListener("click", function() {
+        let newTask = prompt("Edit task:", span.textContent);
+        if (newTask !== null && newTask.trim() !== "") {
+          span.textContent = newTask.trim();
+        }
+      });
+
+      // Delete button
+      let delBtn = document.createElement("button");
+      delBtn.textContent = "Delete";
+      delBtn.classList.add("delete-btn");
+
+      delBtn.addEventListener("click", function() {
+        list.removeChild(li);
+      });
+
+      // Append all
+      li.appendChild(span);
+      li.appendChild(editBtn);
+      li.appendChild(delBtn);
+      list.appendChild(li);
+
+      // Clear input
+      input.value = "";
+    });
+  </script>
+</body>
+</html>

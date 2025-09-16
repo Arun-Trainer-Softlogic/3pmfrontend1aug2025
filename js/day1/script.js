@@ -78,19 +78,26 @@
 
 // let x = 5;
 // let y = 6;
-var a = 10 ;
-var a = 32 ;
+// var a = 10 ;
+// var a = 32 ;
 
-let  b = 10 ;
- b = 34;
-
-
-const c = 10 ;
- c = 10 ;
+// let  b = 10 ;
+//  b = 34;
 
 
-var a = 45;
+// const c = 10 ;
+//  c = 10 ;
 
+
+// var a = 45;
+
+
+
+
+let a = 10 ;
+let ar = 10;
+
+console.log(a + ar);
 
 
 
