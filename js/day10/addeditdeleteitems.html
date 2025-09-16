@@ -1,99 +1,100 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Editable Todo List</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 50px;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      background: #f4f4f4;
-      margin: 5px auto;
-      padding: 8px;
-      width: 300px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-radius: 5px;
-    }
-    button {
-      cursor: pointer;
-      border: none;
-      margin-left: 5px;
-      padding: 5px 8px;
-      border-radius: 3px;
-    }
-    .delete-btn {
-      background: red;
-      color: white;
-    }
-    .edit-btn {
-      background: blue;
-      color: white;
-    }
-  </style>
-</head>
-<body>
-  <h2>Editable Todo List</h2>
-  <input type="text" id="todoInput" placeholder="Enter task">
-  <button id="addBtn">Add Task</button>
-  <ul id="list"></ul>
-
-  <script>
-    let list = document.getElementById("list");
-    let addBtn = document.getElementById("addBtn");
-    let input = document.getElementById("todoInput");
-
-    // Add Item
-    addBtn.addEventListener("click", function() {
-      let task = input.value.trim();
-      if (task === "") {
-        alert("Please enter a task!");
-        return;
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+          body {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        margin-top: 50px;
       }
 
-      let li = document.createElement("li");
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        background: #8f8f8f;
+        margin: 5px auto;
+        padding: 8px;
+        width: 250px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 10px;
+      }
+      button {
+        cursor: pointer;
+        border: none;
+        background: red;
+        color: white;
+        padding: 5px 8px;
+        border-radius: 10px;
+      }
+      .delete-btn{
+        background: green;
+        color: white;
+      }
 
-      // Task text
-      let span = document.createElement("span");
-      span.textContent = task;
+      .edit-btn{
+        background: lightblue;
+        color: rgb(0, 0, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Editable Todo List</h2>
+    <input type="text" id="todoinput" placeholder="Enter task" />
+    <button  id="addBtn">Add Task</button>
+    <ul id="list"></ul>
 
-      // Edit button
-      let editBtn = document.createElement("button");
-      editBtn.textContent = "Edit";
-      editBtn.classList.add("edit-btn");
+    <script>
+      let list = document.getElementById("list");
+      let addBtn = document.getElementById("addBtn");
+      let input = document.getElementById("todoinput");
 
-      editBtn.addEventListener("click", function() {
-        let newTask = prompt("Edit task:", span.textContent);
-        if (newTask !== null && newTask.trim() !== "") {
-          span.textContent = newTask.trim();
+      addBtn.addEventListener("click", function () {
+        let task = input.value.trim();
+        if (task === "") {
+          alert("Please enter a Task ");
+          return;
         }
+
+        let li = document.createElement("li");
+
+        let span = document.createElement("span");
+        span.textContent = task;
+
+        let editBtn = document.createElement("button");
+        editBtn.textContent = "Edit";
+        editBtn.classList.add("edit-btn");
+
+        editBtn.addEventListener("click", function () {
+          let newTask = prompt("edit task :", span.textContent);
+
+          if (newTask !== null && newTask.trim() !== "") {
+            span.textContent = newTask.trim();
+          }
+        });
+
+        let delBtn = document.createElement("button");
+        delBtn.textContent = "Delete";
+        delBtn.classList.add("delete-btn");
+
+        delBtn.addEventListener("click", function () {
+          list.removeChild(li);
+        });
+
+        li.appendChild(span);
+        li.appendChild(editBtn);
+        li.appendChild(delBtn);
+        list.appendChild(li);
+        input.value = ""
       });
 
-      // Delete button
-      let delBtn = document.createElement("button");
-      delBtn.textContent = "Delete";
-      delBtn.classList.add("delete-btn");
-
-      delBtn.addEventListener("click", function() {
-        list.removeChild(li);
-      });
-
-      // Append all
-      li.appendChild(span);
-      li.appendChild(editBtn);
-      li.appendChild(delBtn);
-      list.appendChild(li);
-
-      // Clear input
-      input.value = "";
-    });
-  </script>
-</body>
+    
+    </script>
+  </body>
 </html>
