@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Events</title>
+  </head>
+  <body>
+    <h1>Mouse events example</h1>
+    <button id="btn">Click Me</button>
+    <div
+      id="box"
+      style="
+        width: 150px;
+        height: 100px;
+        background: lightblue;
+        margin-top: 10px;
+      "
+    ></div>
+
+    <script>
+      let btn = document.getElementById("btn");
+      let box = document.getElementById("box");
+
+      btn.addEventListener("click", function () {
+        alert("Button Amukita");
+      });
+
+      // mouse over
+
+      box.addEventListener("mouseover", function () {
+        box.style.background = "yellow";
+      });
+
+      // mouse out
+      box.addEventListener("mouseout", function () {
+        box.style.background = "green";
+      });
+      //  Double Click 
+
+
+      box.addEventListener("dblclick" , function (){
+        alert("Box_double clicked")
+      });
+    </script>
+  </body>
+</html>

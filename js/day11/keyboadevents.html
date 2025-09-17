@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Events </title>
+</head>
+<body>
+    
+    <h1>Keyboard events example </h1>
+
+
+    <input type="text" id="inputBox" placeholder="Type Something....">
+    <p id="output"></p>
+
+
+
+
+    <script>
+        let inputBox = document.getElementById("inputBox");
+        let output = document.getElementById("output");
+
+
+        //key down
+
+        inputBox.addEventListener("keydown" , function(event){
+            console.log("key down has been pressed " + event.key );
+            
+        })
+
+
+        //key up 
+        inputBox.addEventListener("keyup", function(event){
+            console.log("key Up :  " + event.key + inputBox.value);
+            
+            
+        })
+
+
+
+
+
+    </script>
+</body>
+</html>

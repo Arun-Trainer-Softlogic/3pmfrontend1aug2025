@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form events</title>
+  </head>
+  <body>
+    <h2>Form events</h2>
+    <form id="myForm">
+      <input type="text" name="username" placeholder="Enter name" />
+      <input type="text" name="email" placeholder="Enter your email" />
+      <select name="city">
+        <option value="chennai">Chennai</option>
+        <option value="bombay">bombay</option>
+        <option value="mumbai">Mumbai</option>
+        <option value="madras">Madarasi</option>
+      </select>
+      <br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
+    <p id="msg"></p>
+
+    <script>
+      let form = document.getElementById("myForm");
+      let msg = document.getElementById("msg");
+
+      form.city.addEventListener("change", function () {
+        msg.textContent = "city selected " + form.city.value;
+      });
+
+      form.username.addEventListener("focus", function () {
+        form.username.style.background = "yellow";
+      });
+
+      form.username.addEventListener("blur", function () {
+        form.username.style.background = "white";
+      });
+
+
+
+
+      //submit event
+
+
+      form.addEventListener("submit", function(event){
+        event.preventDefault(); // to prevent form from submitting
+        msg.textContent = "form submitted by " + form.username.value;
+
+
+        
+      })
+
+
+    </script>
+  </body>
+</html>
