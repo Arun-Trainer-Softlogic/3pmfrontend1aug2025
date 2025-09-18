@@ -1,78 +1,57 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Calculator with Error Handling</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 50px;
-    }
-    input {
-      padding: 8px;
-      margin: 5px;
-      width: 80px;
-    }
-    button {
-      padding: 8px 12px;
-      margin: 5px;
-      cursor: pointer;
-    }
-    #result {
-      margin-top: 20px;
-      font-weight: bold;
-      font-size: 18px;
-    }
-  </style>
-</head>
-<body>
-  <h2>Calculator</h2>
-  <input type="number" id="num1" placeholder="Number 1">
-  <input type="number" id="num2" placeholder="Number 2"><br>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice 2</title>
+  </head>
+  <body>
+    <h1>calculator</h1>
+    <input type="number" id="num1" placeholder="number 1" />
+    <input type="number" id="num2" placeholder="number 2" />
+    <button onclick="calculate('add')">add</button>
+    <button onclick="calculate('sub')">sub</button>
+    <button onclick="calculate('mul')">mul</button>
+    <button onclick="calculate('div')">div</button>
+    <p id="result"></p>
 
-  <button onclick="calculate('add')">Add</button>
-  <button onclick="calculate('subtract')">Subtract</button>
-  <button onclick="calculate('multiply')">Multiply</button>
-  <button onclick="calculate('divide')">Divide</button>
-
-  <p id="result"></p>
-
-  <script>
-    function calculate(operation) {
-      let resultBox = document.getElementById("result");
-      try {
-        let a = document.getElementById("num1").value;
-        let b = document.getElementById("num2").value;
-
-        if (a === "" || b === "") {
-          throw new Error("Both numbers are required!");
+    <script>
+      function calculate(operation) {
+        let resultBox = document.getElementById("result");
+        try {
+          let a = document.getElementById("num1").value;
+          let b = document.getElementById("num2").value;
+          if (a === "" || b === "") {
+            throw new Error("both numbers are required");
+          }
+          a = Number(a);
+          b = Number(b);
+          let result;
+          switch (operation) {
+            case "add":
+              result = a + b;
+              break;
+            case "sub":
+              result = a - b;
+              break;
+            case "mul":
+              result = a * b;
+              break;
+            case "div":
+              if (b === 0) throw new Error("cant divide by zero");
+              result = a / b;
+              break;
+            default:
+              throw new Error("unknown operation");
+              break;
+          }
+          resultBox.textContent = "result:" + result;
+        } catch (err) {
+          resultBox.textContent = "error :" + err.message;
+        } finally {
+          console.log("calculation attempted.");
         }
-
-        a = Number(a);
-        b = Number(b);
-
-        let result;
-        switch (operation) {
-          case "add": result = a + b; break;
-          case "subtract": result = a - b; break;
-          case "multiply": result = a * b; break;
-          case "divide":
-            if (b === 0) throw new Error("Cannot divide by zero!");
-            result = a / b;
-            break;
-          default:
-            throw new Error("Unknown operation!");
-        }
-
-        resultBox.textContent = "Result: " + result;
-      } 
-      catch (err) {
-        resultBox.textContent = "Error: " + err.message;
-      } 
-      finally {
-        console.log("Calculation attempted.");
       }
-    }
-  </script>
-</body>
+    </script>
+  </body>
 </html>
