@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-          body {
+      body {
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
         margin-top: 50px;
@@ -19,7 +19,7 @@
         background: #8f8f8f;
         margin: 5px auto;
         padding: 8px;
-        width: 250px;
+        width: 500px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -33,27 +33,93 @@
         padding: 5px 8px;
         border-radius: 10px;
       }
-      .delete-btn{
+      .delete-btn {
         background: green;
         color: white;
       }
 
-      .edit-btn{
+      .edit-btn {
         background: lightblue;
         color: rgb(0, 0, 0);
+      }
+      .modal {
+        /* display:flex; */
+        display: none;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        height: 100%;
+        width: 100%;
+      }
+
+      .modal-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-width: 300px;
+        min-height: 50px;
+        border: 2px solid white;
+        border-radius: 10px;
+      }
+      .controlbuttons{
+        display: flex;
+        display: row;
+        justify-content: space-between;
+        margin: 10px;
+      }
+
+      .controlbuttons button{
+        height: 30px;
+        width: 50px;
+      }
+      .currentvalue{
+        margin: 10px;
+        min-height: 150px;
+      }
+      .todo-list{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap:40x;
+      }
+      .todo-list span{
+        flex: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     </style>
   </head>
   <body>
-    <h2>Editable Todo List</h2>
-    <input type="text" id="todoinput" placeholder="Enter task" />
-    <button  id="addBtn">Add Task</button>
-    <ul id="list"></ul>
+    <div class="frame">
+      <h2>Editable Todo List</h2>
+      <input type="text" id="todoinput" placeholder="Enter task" />
+      <button id="addBtn">Add Task</button>
+      <ul id="list"></ul>
+    </div>
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <input type="text" id="editinput" class="editinput">
+        <div class="controlbuttons">
+          <button id=savebtn class="savebtn">save</button>
+          <button id=closebtn class="closebtn">close</button>
+        </div>
+      </div>
+    </div>
 
     <script>
       let list = document.getElementById("list");
       let addBtn = document.getElementById("addBtn");
-      let input = document.getElementById("todoinput");
+      let input = document.getElementById("todoinput")
+      let editinput = document.getElementById("editinput");
+      let modal = document.getElementById("modal")
+      let savebtn = document.getElementById("savebtn")
+      let closebtn = document.getElementById("closebtn")
+
+      let currentSpan = null;
 
       addBtn.addEventListener("click", function () {
         let task = input.value.trim();
@@ -63,21 +129,13 @@
         }
 
         let li = document.createElement("li");
-
+        li.classList.add("todo-list")
         let span = document.createElement("span");
         span.textContent = task;
 
         let editBtn = document.createElement("button");
         editBtn.textContent = "Edit";
         editBtn.classList.add("edit-btn");
-
-        editBtn.addEventListener("click", function () {
-          let newTask = prompt("edit task :", span.textContent);
-
-          if (newTask !== null && newTask.trim() !== "") {
-            span.textContent = newTask.trim();
-          }
-        });
 
         let delBtn = document.createElement("button");
         delBtn.textContent = "Delete";
@@ -87,14 +145,32 @@
           list.removeChild(li);
         });
 
+        editBtn.addEventListener("click", function () {
+          console.log("edit clicked");
+          currentSpan = span
+          editinput.value = span.textContent
+          modal.style.display = "flex";
+        });
+
+        
         li.appendChild(span);
         li.appendChild(editBtn);
         li.appendChild(delBtn);
         list.appendChild(li);
-        input.value = ""
+        input.value = "";
       });
 
-    
+      closebtn.addEventListener("click", function(){
+            console.log("closebtn clicked")
+            modal.style.display = "none";
+          })
+
+      savebtn.addEventListener("click", function(){
+        console.log("savebtn clicked")
+        currentSpan.textContent = editinput.value
+      })
+
+      
     </script>
   </body>
 </html>
